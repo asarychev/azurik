@@ -1,0 +1,14 @@
+[Unit]
+Description=Azik test service
+#Documentation=man:systemd-network-generator.service(8)
+DefaultDependencies=no
+Before=network-pre.target
+Wants=network-pre.target
+
+[Service]
+Type=oneshot
+#RemainAfterExit=yes
+ExecStart=/usr/bin/python3 -u /home/alx/azurik/azurik.py
+
+[Install]
+WantedBy=sysinit.target
